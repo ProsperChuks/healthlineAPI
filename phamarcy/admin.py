@@ -11,9 +11,11 @@ class UserCreationFormExtended(UserCreationForm):
 UserAdmin.add_form = UserCreationFormExtended
 UserAdmin.add_fieldsets = (
     (None, {
-        'fields': ('name', 'email', 'username', 'password1', 'password2',)
+        'fields': ('name', 'email', 'password1', 'password2',)
     }),
 )
 
 # Register your models here.
 admin.site.register(User, UserAdmin)
+admin.site.register(Products)
+admin.site.register(Checkouts)

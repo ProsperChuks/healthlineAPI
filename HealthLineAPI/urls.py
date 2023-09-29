@@ -11,4 +11,10 @@ router.register(r'checkouts', views.CheckoutViewSet, basename='checkout')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
+    path('api/register/', views.register_user, name='register'),
+    path('api/login/', views.user_login, name='login'),
+    path('api/logout/', views.user_logout, name='logout'),
+    path('api/change-password/', views.ChangePasswordView.as_view(), name='change-password'),
 ]
+
+# "password=testpassword" http://localhost:8000/api/change-password/
